@@ -20,6 +20,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
@@ -33,7 +34,10 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingText(message = "Happy Birthday Sam!", from = "From Emma")
+                    GreetingText(
+                        message = stringResource(R.string.happy_birthday_text),
+                        from = stringResource(R.string.signature_text)
+                    )
                 }
             }
         }
@@ -79,6 +83,9 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) 
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        GreetingImage(message = "Happy Birthday Sam!", from = "From Emma")
+        GreetingImage(
+            message = stringResource(R.string.happy_birthday_text),
+            from = stringResource(R.string.signature_text)
+        )
     }
 }
